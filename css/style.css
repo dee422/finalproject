@@ -1,0 +1,99 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dedede;
+  padding: 5px;
+  margin: 15px;
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.95em;
+}
+
+li {
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-gap: 10px;
+}
+
+
+figure {
+  margin: 10px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 35px; 
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 35px; 
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 772px */
+@media (min-width: 772px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+
+  figure {
+      border-radius: 50%; 
+  }
+
+  .grid figure:last-child {
+      grid-column: span 2; 
+  }
+}
+
+/* 992px */
+@media (min-width: 992px) {
+  figure {
+    border-radius: 0;
+  }
+
+  figure img {
+    border-radius: 0;
+  }
+
+  .grid figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+      scroll-behavior: auto; 
+  }
+}
+
+/* color scheme */
+@media (prefers-color-scheme: dark) {
+  figure {
+      background-color: #333; 
+      color: #f1c40f; 
+      border: 1px solid #000; 
+  }
+}
